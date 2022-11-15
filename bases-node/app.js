@@ -6,4 +6,3 @@ console.clear();
 crearArchivo(base)
   .then(nombreArchivo => console.log(nombreArchivo, 'creado'))
   .catch(err => console.log(err));
-  // hola soy jepc

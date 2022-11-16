@@ -21,24 +21,31 @@ const fs = require('fs');//sirve para grabar o escribir arhivos locales
 // }
 
 // Async
-const crearArchivo = async (base = 1) => {
+const crearArchivo = async (base = 1, lista=false) => {
 
   try {
-    console.log('======================');
-    console.log(`    Tabla del: ${base}`);
-    console.log('======================');
-
     let salida = '';
 
+    // For genera la tabla de multiplicar
     for (let con = 1; con <= 10; con++) {
       salida += `${base} X ${con} = ${base * con}\n`;
     }
 
-    console.log(salida);
+    // If verifica si el valor de la lista es true o false, para que se muestre
+    if (lista) {
+      console.log('======================');
+      console.log(`    Tabla del: ${base}`);
+      console.log('======================');
+      console.log(salida);
+    }
 
+    // Crea el archivo con los datos
     fs.writeFileSync(`tabla-${base}.txt`, salida);
 
-    return `tabla-${base}.txt creado`;
+    // Devuelve un string con los datos
+    return `tabla-${base}.txt`;
+
+    // captura los errores
   } catch (error) {
     throw error;
 

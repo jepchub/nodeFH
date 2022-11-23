@@ -46,7 +46,7 @@ const crearArchivo = async (base = 1, lista = false, hasta = 1) => {
     }
 
     // Crea el archivo con los datos
-    fs.writeFileSync(`tabla-${base}.txt`, salida);
+    fs.writeFileSync(`./salida/tabla-${base}.txt`, salida);
 
     // Devuelve un string con los datos
     return `tabla-${base}.txt`;

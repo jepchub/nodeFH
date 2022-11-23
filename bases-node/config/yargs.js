@@ -9,8 +9,15 @@ const argv = require('yargs')
     alias: 'listar',
     type: 'boolean',
     default: false,
-    demandOption: true,
+    // demandOption: true,
     describe: 'Muestra la tabla en consola'
+  })
+  .option('h', {
+    alias: 'hasta',
+    type: 'number',
+    // demandOption: true,
+    default: 10,
+    describe:'Es la el rango de la tabla de multiplicar'
   })
   .check((argv, options) => {
     if (isNaN(argv.b)) {
